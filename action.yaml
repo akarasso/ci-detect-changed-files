@@ -1,0 +1,19 @@
+name: Get All Changed Files
+author: Akarasso
+branding:
+  icon: file
+  color: purple
+runs:
+  using: node12
+  main: build/index.js
+inputs:
+  token:
+    description: >
+      GitHub token for GitHub API requests.
+      Users shouldn't need to set this themselves.
+    required: true
+    default: ${{ github.token }}
+outputs:
+  packages:
+    description: >
+      Array of all changed packages.
